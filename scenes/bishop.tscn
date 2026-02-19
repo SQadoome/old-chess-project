@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://iw3yqqg35jpq"]
+
+[ext_resource type="Script" uid="uid://07tce5xurj8y" path="res://scenes/bishop.gd" id="1_pngg1"]
+[ext_resource type="Texture2D" uid="uid://yfsbbvjmu3u6" path="res://art/normal/white_bishop.png" id="2_x4yfa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ev788"]
+
+[node name="Bishop" type="Node2D" groups=["Piece"]]
+script = ExtResource("1_pngg1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_x4yfa")
+hframes = 3
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ev788")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_mouse_exited"]

@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://3uc7awp7bdbe"]
+
+[ext_resource type="Texture2D" uid="uid://bq53khmqwg1pp" path="res://art/normal/coin.png" id="1_efmwq"]
+[ext_resource type="Script" uid="uid://bp2fuglaxb2h1" path="res://scenes/gui.gd" id="1_mfius"]
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_mfius")
+
+[node name="P1Coins" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 1.0
+grow_vertical = 0
+text = "        5"
+
+[node name="Sprite2D" type="Sprite2D" parent="P1Coins"]
+position = Vector2(12, 12)
+scale = Vector2(4, 4)
+texture = ExtResource("1_efmwq")
+
+[node name="P2Coins" type="Label" parent="."]
+layout_mode = 1
+offset_right = 40.06
+offset_bottom = 23.0
+text = "        5"
+
+[node name="Sprite2D" type="Sprite2D" parent="P2Coins"]
+position = Vector2(12, 12)
+scale = Vector2(4, 4)
+texture = ExtResource("1_efmwq")

@@ -1,0 +1,24 @@
+[gd_scene load_steps=9 format=4 uid="uid://dd2542srac5ec"]
+
+[ext_resource type="PackedScene" uid="uid://dv50wi1fauo5p" path="res://scenes/pawn.tscn" id="1_enovx"]
+[ext_resource type="PackedScene" uid="uid://pxxgjes18xlg" path="res://scenes/rook.tscn" id="2_wc3i8"]
+[ext_resource type="PackedScene" uid="uid://iw3yqqg35jpq" path="res://scenes/bishop.tscn" id="3_irqhd"]
+[ext_resource type="PackedScene" uid="uid://coawl72rm7jfw" path="res://scenes/king.tscn" id="4_xuqwc"]
+[ext_resource type="PackedScene" uid="uid://dhjabn8o8myi1" path="res://scenes/queen.tscn" id="5_bb2ls"]
+[ext_resource type="PackedScene" uid="uid://0bo68so8otdg" path="res://scenes/knight.tscn" id="6_yg1wb"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_r6qku"]
+scenes/1/scene = ExtResource("1_enovx")
+scenes/2/scene = ExtResource("2_wc3i8")
+scenes/3/scene = ExtResource("3_irqhd")
+scenes/4/scene = ExtResource("4_xuqwc")
+scenes/5/scene = ExtResource("5_bb2ls")
+scenes/6/scene = ExtResource("6_yg1wb")
+
+[sub_resource type="TileSet" id="TileSet_om3o7"]
+tile_size = Vector2i(22, 22)
+sources/1 = SubResource("TileSetScenesCollectionSource_r6qku")
+
+[node name="BlackPieces" type="TileMapLayer"]
+tile_map_data = PackedByteArray("AAAAAPz/AQAAAAAABAD8//z/AQAAAAAAAgADAPz/AQAAAAAAAgD8//3/AQAAAAAAAQD9//3/AQAAAAAAAQD+//3/AQAAAAAAAQD///3/AQAAAAAAAQABAP3/AQAAAAAAAQACAP3/AQAAAAAAAQADAP3/AQAAAAAAAQD///z/AQAAAAAABQD9//z/AQAAAAAABgACAPz/AQAAAAAABgD+//z/AQAAAAAAAwABAPz/AQAAAAAAAwAAAP3/AQAAAAAAAQA=")
+tile_set = SubResource("TileSet_om3o7")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://m1f8mkw21ctx"]
+
+[ext_resource type="Script" uid="uid://dr784seh2lcjf" path="res://scenes/castle_overlay.gd" id="1_062uy"]
+[ext_resource type="Texture2D" uid="uid://1q84bpcfn4iq" path="res://art/normal/danger.png" id="2_nxmcs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t16o4"]
+
+[node name="CastleOverlay" type="Node2D"]
+script = ExtResource("1_062uy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.633333, 1, 0, 1)
+texture = ExtResource("2_nxmcs")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_t16o4")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_nxmcs")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_mouse_exited"]

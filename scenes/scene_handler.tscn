@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://qf6lw8jn7lwy"]
+
+[ext_resource type="PackedScene" uid="uid://0cffmnlq1nvg" path="res://scenes/lobby.tscn" id="1_6kaua"]
+[ext_resource type="Script" uid="uid://c2iqs61utou7q" path="res://scenes/scene_handler.gd" id="1_tx7b0"]
+[ext_resource type="PackedScene" uid="uid://bjyoawwlovgx7" path="res://scenes/network.tscn" id="2_tx7b0"]
+
+[node name="SceneHandler" type="Node2D"]
+script = ExtResource("1_tx7b0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Lobby" parent="CanvasLayer" instance=ExtResource("1_6kaua")]
+
+[node name="Network" parent="." instance=ExtResource("2_tx7b0")]
+
+[connection signal="player_joined" from="Network" to="CanvasLayer/Lobby" method="_on_network_player_joined"]
+[connection signal="player_ready" from="Network" to="CanvasLayer/Lobby" method="_on_network_player_ready"]

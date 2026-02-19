@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8jbhpmgrp2yw"]
+
+[ext_resource type="Script" uid="uid://gatfcsrh737c" path="res://scenes/detector.gd" id="1_edrlx"]
+
+[node name="Detector" type="Node2D"]
+modulate = Color(1, 1, 1, 0.501961)
+script = ExtResource("1_edrlx")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnmrk88dm2f6e"]
+
+[ext_resource type="Script" uid="uid://ci5ypyefuatqk" path="res://scenes/placeable_piece.gd" id="1_r68u1"]
+[ext_resource type="PackedScene" uid="uid://c8jbhpmgrp2yw" path="res://scenes/detector.tscn" id="2_uuyi3"]
+
+[node name="PlaceablePiece" type="Node2D"]
+z_index = 3
+script = ExtResource("1_r68u1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+hframes = 3
+
+[node name="Detector" parent="." instance=ExtResource("2_uuyi3")]
+SIZE = Vector2(20, 20)
+
+[connection signal="mouse_entered" from="Detector" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Detector" to="." method="_on_mouse_exited"]

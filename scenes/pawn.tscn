@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dv50wi1fauo5p"]
+
+[ext_resource type="Script" uid="uid://uy7465j5axim" path="res://scenes/pawn.gd" id="1_ccfo0"]
+[ext_resource type="Texture2D" uid="uid://5f4m4kh648k0" path="res://art/normal/white_pawn.png" id="2_ccfo0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bab8k"]
+
+[node name="Pawn" type="Node2D" groups=["Piece"]]
+script = ExtResource("1_ccfo0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ccfo0")
+hframes = 3
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_bab8k")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="moved" from="." to="." method="_on_moved"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_mouse_exited"]

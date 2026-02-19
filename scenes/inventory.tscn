@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr5idws0oiiqh"]
+
+[ext_resource type="Script" uid="uid://cx2nyk8t76d4v" path="res://scenes/inventory.gd" id="1_hj2ta"]
+[ext_resource type="Texture2D" uid="uid://bi68r3yi84nfa" path="res://art/normal/podium.png" id="2_ty45s"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_hj2ta")
+
+[node name="Item1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 281.0
+offset_top = 141.0
+offset_right = 321.0
+offset_bottom = 177.0
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Podium" type="Sprite2D" parent="Item1"]
+position = Vector2(24, 26)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ty45s")
+
+[node name="Item2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 249.0
+offset_top = 141.0
+offset_right = 289.0
+offset_bottom = 177.0
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Podium" type="Sprite2D" parent="Item2"]
+position = Vector2(25, 26)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ty45s")

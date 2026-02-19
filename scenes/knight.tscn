@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://0bo68so8otdg"]
+
+[ext_resource type="Script" uid="uid://v74fy73p31a2" path="res://scenes/knight.gd" id="1_3i0j8"]
+[ext_resource type="Texture2D" uid="uid://crwhlvo2yvifw" path="res://art/normal/white_knight.png" id="2_qxgmm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dyjn"]
+
+[node name="Knight" type="Node2D" groups=["Piece"]]
+script = ExtResource("1_3i0j8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qxgmm")
+hframes = 3
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_0dyjn")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_mouse_exited"]
